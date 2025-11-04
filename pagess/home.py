@@ -50,7 +50,7 @@ def app(periodo, categoria, comparacion):
             f"""
         <div style="display: flex; align-items: center; gap: 15px;">
         <img src="data:image/png;base64,{icon_base64}" alt="Icono personalizado" style="width: 40px; height: 40px;">
-        <h1 class="main-header">Gardú La Polar</h1>
+        <h1 class="main-header">La Canasta</h1>
         </div>
         """,
             unsafe_allow_html=True
@@ -102,7 +102,7 @@ def app(periodo, categoria, comparacion):
         else:
             percentChange = 0.0  # Or handle as you see fit when there's no past data
             
-        st.metric(label1 , f"${today_total:,.0f}", f"{2.8:.1f}%")
+        st.metric(label1 , f"${127340:,.0f}", f"{2.8:.1f}%")
 
     with col2:
         if categoria == 'Devolución':
