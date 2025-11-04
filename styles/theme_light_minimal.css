@@ -1,0 +1,121 @@
+/* ===========================
+   TEMA 4: MIDNIGHT ÉLITE (DARK)
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Crimson+Text:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root{
+  --bg: radial-gradient(1200px 800px at 20% 0%, #0b1220 0%, #0a0f1a 45%, #070b12 100%);
+  --surface: #0f172a;         /* pizarra profunda */
+  --surface-2: #111827;
+  --sidebar-bg: rgba(15, 23, 42, .6);
+  --text: #E5E7EB;
+  --muted:#9CA3AF;
+  --line: rgba(255,255,255,.1);
+  --accent:#10B981;           /* esmeralda */
+  --accent-2:#34D399;
+  --danger:#F43F5E;
+  --btn-text:#0b1220;
+  --radius:12px;
+  --radius-xl:18px;
+  --shadow:0 20px 40px rgba(0,0,0,.35);
+  --font-ui:'Manrope', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-head:'Crimson Text', Georgia, 'Times New Roman', serif;
+  --font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html, body, .stApp{
+  background:var(--bg) !important;
+  color:var(--text) !important;
+  font-family:var(--font-ui);
+}
+.stApp header{ background: transparent !important; }
+.block-container{ max-width:1180px; padding-top:1rem; padding-bottom:4rem; }
+
+/* Sidebar glass */
+[data-testid="stSidebar"]{
+  background: var(--sidebar-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right:1px solid var(--line);
+  box-shadow: inset 0 0 0 1px var(--line), 0 20px 40px rgba(0,0,0,.35);
+}
+[data-testid="stSidebar"] *{ color:var(--text) !important; }
+
+/* Tipos */
+h1,h2,h3{ color:#F3F4F6; font-family:var(--font-head); letter-spacing:.2px; }
+h1{ font-weight:700; text-shadow: 0 2px 12px rgba(16,185,129,.12); }
+h2{ font-weight:700; }
+
+/* Links */
+a{ color:var(--accent); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* Botones */
+.stButton>button{
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%) !important;
+  color: var(--btn-text) !important;
+  border: 1px solid var(--accent-2) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  padding:.65rem 1rem !important;
+  font-weight:800; letter-spacing:.2px;
+  transition: transform .05s ease, box-shadow .2s ease, filter .2s ease;
+}
+.stButton>button:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+
+/* Inputs generales */
+.stTextInput input, .stTextArea textarea, .stNumberInput input, .stDateInput input{
+  background: var(--surface-2) !important; color: var(--text) !important;
+  border:1px solid var(--line) !important; border-radius: var(--radius) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+/* Tabs */
+[role="tablist"]{ gap:8px; }
+[role="tab"]{
+  background: var(--surface-2); color: var(--muted);
+  border:1px solid var(--line); border-radius: 999px; padding:.4rem .9rem;
+}
+[role="tab"][aria-selected="true"]{
+  color:#0b1220; background: var(--accent);
+  border-color: var(--accent-2);
+}
+
+/* Métricas */
+[data-testid="stMetric"]{
+  background: var(--surface-2);
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 14px 18px;
+  box-shadow: var(--shadow);
+}
+[data-testid="stMetricLabel"]{ color: var(--muted); }
+[data-testid="stMetricValue"]{
+  font-family: var(--font-head);
+  text-shadow: 0 1px 10px rgba(16,185,129,.14);
+}
+
+/* DataFrame */
+section[data-testid="stDataFrame"]{
+  background: var(--surface);
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+section[data-testid="stDataFrame"] table{
+  color: var(--text);
+}
+
+/* Plotly card */
+[data-testid="stPlotlyChart"]{
+  background: var(--surface);
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding:16px;
+  box-shadow: var(--shadow);
+}
+
+/* Código */
+code, pre{ font-family:var(--font-mono); color:#D1FAE5; }
+
+/* ===== Incluye el KIT de Selects aquí también ===== */

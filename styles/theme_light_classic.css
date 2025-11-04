@@ -1,0 +1,183 @@
+/* ===========================
+   TEMA 1: AURORA PASTEL (GLASS)
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Poppins:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root{
+  --bg: linear-gradient(135deg,#ffffff 0%,#EEF2FF 100%);
+  --surface: #FFFFFF;
+  --sidebar-bg: rgba(255,255,255,.40);
+  --text: #0F172A;
+  --muted:#64748B;
+  --line:#E5EAF3;
+  --accent:#6366F1;   /* indigo */
+  --accent-2:#4F46E5;
+  --btn-text:#FFFFFF;
+  --radius:14px;
+  --radius-xl:22px;
+  --shadow:0 12px 30px rgba(2,6,23,.08);
+  --font-ui:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-head:'Poppins', 'Nunito', system-ui, sans-serif;
+  --font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html, body, .stApp{ 
+  background:var(--bg) !important; 
+  color:var(--text) !important; 
+  font-family:var(--font-ui);
+}
+
+.stApp header{background:transparent !important;}
+
+/* Contenedor principal */
+/* Contenedor fluido: se adapta al ancho disponible y al sidebar */
+.block-container{
+  max-width: clamp(720px, 96vw, 1600px) !important; /* 96vw = sigue el viewport */
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+
+/* Sidebar con efecto glass */
+[data-testid="stSidebar"]{
+  background:var(--sidebar-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right:1px solid var(--line);
+  box-shadow: inset 0 0 0 1px var(--line), 0 20px 40px rgba(2,6,23,.06);
+}
+[data-testid="stSidebar"] *{ color:var(--text) !important; }
+
+/* Titulares */
+h1,h2,h3{ font-family:var(--font-head); color:var(--text); letter-spacing:.2px; }
+h1{ font-weight:700; }
+h2{ font-weight:700; }
+
+/* Links */
+a{ color:var(--accent); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* Botones */
+.stButton>button{
+  background:var(--accent) !important; color:var(--btn-text) !important;
+  border:1px solid var(--accent-2) !important;
+  border-radius:var(--radius) !important; 
+  box-shadow:var(--shadow) !important; 
+  padding:.6rem 1rem !important; 
+  font-weight:700; letter-spacing:.2px;
+  transition: transform .05s ease, box-shadow .2s ease;
+}
+.stButton>button:hover{ transform: translateY(-1px); }
+
+/* Inputs y selects */
+.stTextInput input, .stTextArea textarea, .stNumberInput input, .stDateInput input,
+.stSelectbox div[role="button"], .stMultiSelect div[role="button"]{
+  background:var(--surface) !important; color:var(--text) !important;
+  border:1px solid var(--line) !important; border-radius:var(--radius) !important;
+  box-shadow: var(--shadow);
+}
+
+/* Tabs */
+[role="tablist"]{ gap:8px; }
+[role="tab"]{
+  background:var(--surface); color:var(--muted);
+  border:1px solid var(--line); border-radius:999px; padding:.4rem .9rem;
+}
+[role="tab"][aria-selected="true"]{
+  color:var(--text); border-color:var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Métricas */
+[data-testid="stMetric"]{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--radius-xl); padding:12px 16px; box-shadow:var(--shadow);
+}
+[data-testid="stMetricValue"]{ font-weight:800; }
+
+/* DataFrame */
+section[data-testid="stDataFrame"]{
+  background: var(--surface);
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+section[data-testid="stDataFrame"] table{
+  color: var(--text);
+}
+/* Gráficas Plotly como “cards” */
+[data-testid="stPlotlyChart"]{
+  background:var(--surface); border:1.5px solid var(--line);
+  border-radius:var(--radius-xl); padding:10px; box-shadow:var(--shadow);
+}
+
+/* Código */
+code, pre{ font-family:var(--font-mono); }
+/* ==== SELECTBOX / MULTISELECT – KIT ROBUSTO ==== */
+/* Contenedor clicable del control (cerrado) */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"])
+  :where(div[role="button"], div[role="combobox"]) {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1.5px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  padding: 10px 12px !important;
+  box-shadow: var(--shadow);
+  min-height: 42px;
+}
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"])
+  :where(div[role="button"], div[role="combobox"]):hover {
+  border-color: var(--accent) !important;
+}
+
+/* Estado abierto (en algunas versiones se refleja vía aria-expanded) */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"])
+  :where(div[role="button"][aria-expanded="true"], div[role="combobox"][aria-expanded="true"]) {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Íconos (caret/clear) dentro del control */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"]) svg{
+  fill: var(--muted) !important;
+  stroke: var(--muted) !important;
+}
+
+/* Popover / lista desplegable (Streamlit la monta como portal) */
+:where([data-testid="stSelectboxPopover"], [data-testid="stMultiSelectPopover"], div[role="listbox"]) {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  z-index: 9999 !important;
+  overflow: hidden;
+}
+
+/* Opción de la lista */
+:where(div[role="option"]) {
+  padding: 8px 12px !important;
+  cursor: pointer;
+}
+:where(div[role="option"]):hover {
+  background: color-mix(in srgb, var(--accent) 14%, transparent) !important;
+}
+:where(div[role="option"][aria-selected="true"]) {
+  background: color-mix(in srgb, var(--accent) 22%, transparent) !important;
+  border-left: 3px solid var(--accent);
+}
+
+/* Chips del MultiSelect (cuando existan) */
+:where([data-testid="stMultiSelect"]) :where(span, div)[data-baseweb="tag"],
+:where([data-testid="stMultiSelect"]) :where(span, div).stTag {
+  background: color-mix(in srgb, var(--accent) 18%, transparent) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 999px !important;
+  padding: 2px 8px !important;
+}
+
+/* Placeholder y texto dentro del control */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"]) ::placeholder {
+  color: var(--muted) !important;
+}

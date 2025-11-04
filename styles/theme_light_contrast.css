@@ -1,0 +1,163 @@
+/* ===========================
+   TEMA 2: SWISS BRUTALIST
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+  --bg:#FAFAFA;
+  --surface:#FFFFFF;
+  --sidebar-bg:#FFFFFF;
+  --text:#0A0A0A;
+  --muted:#525252;
+  --line:#E5E5E5;
+  --accent:#FF3355;    /* rojo brillante */
+  --accent-2:#E5002A;
+  --btn-text:#FFFFFF;
+  --radius:6px;
+  --radius-xl:10px;
+  --shadow:0 2px 0 rgba(10,10,10,.08);
+  --font-ui:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-head:'Inter', system-ui, sans-serif;
+  --font-mono:'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html, body, .stApp{ background:var(--bg) !important; color:var(--text) !important; font-family:var(--font-ui); }
+.stApp header{ background:transparent !important; }
+
+.block-container{ max-width:1100px; padding-top:.5rem; }
+
+/* Sidebar minimal con división marcada */
+[data-testid="stSidebar"]{
+  background:var(--sidebar-bg) !important;
+  border-right:3px solid var(--text);
+}
+[data-testid="stSidebar"] *{ color:var(--text) !important; }
+
+/* Titulares contundentes */
+h1,h2,h3{ font-family:var(--font-head); color:var(--text); }
+h1{
+  font-weight:800; text-transform:uppercase; letter-spacing:.06em;
+  border-bottom:6px solid var(--text); padding-bottom:6px; margin-bottom:12px;
+}
+h2{ font-weight:800; letter-spacing:.02em; }
+
+/* Enlaces */
+a{ color:var(--accent); text-decoration: underline; text-decoration-thickness: 2px; }
+
+/* Botones rectos y en mayúsculas */
+.stButton>button{
+  background:var(--accent) !important; color:var(--btn-text) !important;
+  border:2px solid var(--text) !important; border-radius:var(--radius) !important;
+  box-shadow: var(--shadow) !important; font-weight:800; text-transform:uppercase;
+  letter-spacing:.08em; padding:.65rem 1.1rem !important;
+}
+.stButton>button:hover{ filter: saturate(1.15); transform: translateY(-1px); }
+
+/* Inputs con borde negro fino */
+.stTextInput input, .stTextArea textarea, .stNumberInput input, .stDateInput input,
+.stSelectbox div[role="button"], .stMultiSelect div[role="button"]{
+  background:var(--surface) !important; color:var(--text) !important;
+  border:2px solid var(--text) !important; border-radius:var(--radius) !important;
+  box-shadow: none !important;
+}
+
+/* Tabs rectangulares */
+[role="tablist"]{ gap:6px; }
+[role="tab"]{
+  background:var(--surface); color:var(--text);
+  border:2px solid var(--text); border-radius:4px; padding:.35rem .8rem;
+}
+[role="tab"][aria-selected="true"]{
+  background:var(--accent); color:#fff; border-color:var(--text);
+}
+
+/* Métricas “placa” */
+[data-testid="stMetric"]{
+  background:var(--surface); border:2px solid var(--text);
+  border-radius:4px; padding:10px 14px; box-shadow: var(--shadow);
+}
+[data-testid="stMetricValue"]{ font-family:var(--font-head); font-weight:800; }
+
+/* DataFrame con líneas visibles */
+section[data-testid="stDataFrame"]{
+  background:var(--surface); border:2px solid var(--text);
+  border-radius:4px; box-shadow: var(--shadow);
+}
+section[data-testid="stDataFrame"] table{ font-size:.95rem; }
+
+/* Plotly “poster” */
+[data-testid="stPlotlyChart"]{
+  background:var(--surface); border:3px solid var(--text);
+  border-radius:6px; padding:18px; box-shadow: 6px 6px 0 rgba(10,10,10,.12);
+}
+
+/* Código */
+code, pre{ font-family:var(--font-mono); font-size:.95rem; }
+/* ==== SELECTBOX / MULTISELECT – KIT ROBUSTO ==== */
+/* Contenedor clicable del control (cerrado) */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"])
+  :where(div[role="button"], div[role="combobox"]) {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1.5px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  padding: 10px 12px !important;
+  box-shadow: var(--shadow);
+  min-height: 42px;
+}
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"])
+  :where(div[role="button"], div[role="combobox"]):hover {
+  border-color: var(--accent) !important;
+}
+
+/* Estado abierto (en algunas versiones se refleja vía aria-expanded) */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"])
+  :where(div[role="button"][aria-expanded="true"], div[role="combobox"][aria-expanded="true"]) {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Íconos (caret/clear) dentro del control */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"]) svg{
+  fill: var(--muted) !important;
+  stroke: var(--muted) !important;
+}
+
+/* Popover / lista desplegable (Streamlit la monta como portal) */
+:where([data-testid="stSelectboxPopover"], [data-testid="stMultiSelectPopover"], div[role="listbox"]) {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  z-index: 9999 !important;
+  overflow: hidden;
+}
+
+/* Opción de la lista */
+:where(div[role="option"]) {
+  padding: 8px 12px !important;
+  cursor: pointer;
+}
+:where(div[role="option"]):hover {
+  background: color-mix(in srgb, var(--accent) 14%, transparent) !important;
+}
+:where(div[role="option"][aria-selected="true"]) {
+  background: color-mix(in srgb, var(--accent) 22%, transparent) !important;
+  border-left: 3px solid var(--accent);
+}
+
+/* Chips del MultiSelect (cuando existan) */
+:where([data-testid="stMultiSelect"]) :where(span, div)[data-baseweb="tag"],
+:where([data-testid="stMultiSelect"]) :where(span, div).stTag {
+  background: color-mix(in srgb, var(--accent) 18%, transparent) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 999px !important;
+  padding: 2px 8px !important;
+}
+
+/* Placeholder y texto dentro del control */
+:where([data-testid="stSelectbox"],[data-testid="stMultiSelect"]) ::placeholder {
+  color: var(--muted) !important;
+}

@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "created_at": 1762193432
+  },
+  "users": {
+    "admin": {
+      "salt": "87b549fe5a6832b6958580a0ec54d541",
+      "password_hash": "c4a3fc82d55b89c4832f01df07ff980e4742b312ba43637ac7f20f8d271e1388",
+      "role": "admin",
+      "pages": [
+        "Home",
+        "Ventas",
+        "Costos",
+        "Alertas",
+        "Admin"
+      ],
+      "must_change_password": true
+    }
+  }
+}
