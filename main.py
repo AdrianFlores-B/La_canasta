@@ -13,7 +13,7 @@ from users_db import load_db, allowed_pages_for, is_admin, BASE_PAGES
 
 
 st.set_page_config(
-    page_title="Gardu",
+    page_title="La Canasta",
     page_icon="images/gardu_logo.jpg",   # ruta a la imagen
     layout="wide",
     initial_sidebar_state="collapsed"

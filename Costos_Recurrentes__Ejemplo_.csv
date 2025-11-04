@@ -1,5 +1,5 @@
 ID,Concepto,Fecha,Categoría,Sucursal,Monto,Responsable,Tipo de Costo
 3,Pago Renta,2025-11-03,Renta,MATRIZ,7500.0,admin,Recurrente
 2,Pago Nomina,2025-11-03,Nomina,MATRIZ,40000.0,admin,Recurrente
-1,Carne de cerdo 25kg,2025-11-03,Suministros,MATRIZ,2500.0,admin,Recurrente
+1,Pedido REYMA,2025-11-03,Suministros,MATRIZ,125000,admin,Recurrente
 4,Agua,2025-11-03,Servicios,MATRIZ,250.0,admin,Recurrente

@@ -31,7 +31,7 @@ def app(periodo, categoria, comparacion):
 
 
     st.set_page_config(
-        page_title="Gardú La Polar",
+        page_title="La Canasta",
         page_icon="images/gardu_logo.jpg",
         layout="wide",
         initial_sidebar_state="expanded"
@@ -56,8 +56,8 @@ def app(periodo, categoria, comparacion):
             unsafe_allow_html=True
     )
     notificaciones = [
-    "⚠️ Se agotará la Coca-Cola 600 ml mañana.",
-    "🔻 Tortas de pierna bajaron 25% esta semana.",
+    "⚠️ Se agotará la Bolsa Baja 40x60 ml mañana.",
+    "🔻 Venta de Camiseta bajo 25% esta semana.",
     ]   
 
 
