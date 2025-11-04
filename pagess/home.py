@@ -230,10 +230,10 @@ def app(periodo, categoria, comparacion):
 
         # Diccionario original
         data = {
-            "Platillos": 55000,
-            "Bebidas": 20000,
-            "Combos": 35000,
-            "Postres": 10000
+            "Vaso REYMA": 55000,
+            "Charola 855": 20000,
+            "Bolsa Basura": 35000,
+            "Abarrotes": 10000
         }
 
         # Crear DataFrame

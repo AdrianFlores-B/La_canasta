@@ -9,23 +9,22 @@ def app():
     # Datos simulados
     # ------------------------
     inventario_actual = {
-        "Refresco Coca-Cola 600ml": 45,
-        "Telera (pieza)": 120,
-        "Carne de cerdo (kg)": 18,
-        "Crema (L)": 7,
-        "Mayonesa (kg)": 5,
-        "Tortillas (kg)": 25,
-        "Carne de res (kg)": 10,
+        "Bolsa Plana 10x20": 45,
+        "Bolsa Plana 10x20": 120,
+        "Jabon Roma 1kg": 18,
+        "Electrolit varios": 7,
+        "Bolsa 60x90": 5,
+        "Camiseta Mediana": 25,
+        "Vaso #12": 10,
     }
-
     consumo_diario_estimado = {
-        "Refresco Coca-Cola 600ml": 12,
-        "Telera (pieza)": 40,
-        "Carne de cerdo (kg)": 4,
-        "Crema (L)": 1.2,
-        "Mayonesa (kg)": 0.8,
-        "Tortillas (kg)": 7,
-        "Carne de res (kg)": 3,
+        "Bolsa Plana 10x20": 5,
+        "Bolsa Plana 10x20": 12,
+        "Jabon Roma 1kg": 7,
+        "Electrolit varios": 2,
+        "Bolsa 60x90": 10,
+        "Camiseta Mediana": 10,
+        "Vaso #12": 20,
     }
 
     # ------------------------
