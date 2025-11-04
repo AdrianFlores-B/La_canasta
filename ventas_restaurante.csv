@@ -1,4 +1,4 @@
-SaleId,fecha_hora,Total,TotalRefound,SaleReturned,Producto,Fecha
+SaleId,fecha_hora,Total,TotalRefound,SaleReturned,Sucursal,Fecha
 1,2023-11-03 12:31:44,25,0,False,Bolsa de plástico grande,2023-11-03
 2,2023-11-03 20:54:50,18,0,False,Bolsa de plástico mediana,2023-11-03
 3,2023-11-03 13:09:04,40,0,False,Platos desechables 50 pzas,2023-11-03
